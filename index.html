@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="hy">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Level Up POS - Login</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="LevelUp">
+        <div class="header">
+            <div class="logo">
+                <img src="gemini-svg.svg" alt="Logo"> 
+                <span>Level Up</span>
+            </div>
+            <div class="header-right">
+                <div class="lang-selector">
+                    <button class="lang-btn" data-lang="hy">HY</button>
+                    <button class="lang-btn" data-lang="ru">RU</button>
+                    <button class="lang-btn" data-lang="en">EN</button>
+                </div>
+                <div class="system-info" id="clock">00:00:00</div>
+            </div>
+        </div>
+
+        <div class="screen">
+            <div class="login-screen" id="loginScreen">
+                <div class="left-panel">
+                    <h1 class="welcome-title" data-i18n="welcomeTitle">Բարի գալուստ</h1>
+                    <p class="welcome-sub" data-i18n="welcomeSub">Մուտք գործելու համար հավաքեք ձեր անհատական PIN կոդը։</p>
+                </div>
+                <div class="right-panel">
+                    <input type="password" class="pin-display" id="pinDisplay" readonly placeholder="••••">
+                    <div class="keypad">
+                        <button class="key-btn" value="1">1</button>
+                        <button class="key-btn" value="2">2</button>
+                        <button class="key-btn" value="3">3</button>
+                        <button class="key-btn" value="4">4</button>
+                        <button class="key-btn" value="5">5</button>
+                        <button class="key-btn" value="6">6</button>
+                        <button class="key-btn" value="7">7</button>
+                        <button class="key-btn" value="8">8</button>
+                        <button class="key-btn" value="9">9</button>
+                        <button class="key-btn clear" value="C">C</button>
+                        <button class="key-btn" value="0">0</button>
+                        <button class="key-btn enter" value="enter">✓</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="shift-screen hidden" id="shiftScreen">
+                <div class="user-badge">
+                    <h2 id="shiftUserName">Անուն Ազգանուն</h2>
+                    <p id="shiftUserPosition">Պաշտոն</p>
+                </div>
+                <button class="action-btn" id="startShiftBtn" data-i18n="openShift">Բացել անձնական հերթափոխը</button>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="login.js"></script>
+</body>
+</html>

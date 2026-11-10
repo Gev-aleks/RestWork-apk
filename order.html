@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="hy">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Level Up POS - Order Panel</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="LevelUp">
+        <div class="header">
+            <div class="logo">
+                <img src="gemini-svg.svg" alt="Logo"> 
+                <span>Level Up</span>
+            </div>
+            <div class="header-right">
+                <div class="lang-selector">
+                    <button class="lang-btn" data-lang="hy">HY</button>
+                    <button class="lang-btn" data-lang="ru">RU</button>
+                    <button class="lang-btn" data-lang="en">EN</button>
+                </div>
+                <div class="system-info" id="clock">00:00:00</div>
+            </div>
+        </div>
+
+        <div class="screen order-panel-screen">
+            <div class="order-panel-container">
+                <div class="order-panel-header">
+                    <div class="header-left">
+                        <h2 id="tableNameDisplay">Սեղան</h2>
+                        <span class="guest-tag" id="tableGuestsDisplay">Հյուրեր: 0</span>
+                    </div>
+                    <div class="header-center">
+                        <div class="info-item"><span data-i18n="waiter">Մատուցող</span>: <strong id="orderWaiterName">-</strong></div>
+                        <div class="info-item"><span data-i18n="dateTime">Օր / Ժամ</span>: <strong id="orderCurrentDateTime">-</strong></div>
+                        <div class="info-item"><span data-i18n="openTime">Բացման ժամ</span>: <strong id="tableOpenTimeDisplay">-</strong></div>
+                    </div>
+                </div>
+
+                <div class="order-panel-body">
+                    <div class="order-left-window">
+                        <div class="category-tabs"></div>
+                        <div class="menu-items-grid" id="menuItemsGrid"></div>
+                    </div>
+
+                    <div class="order-right-window">
+                        <h3 data-i18n="addedOrders">Ավելացված պատվերներ</h3>
+                        <div class="order-items-list" id="orderItemsList"></div>
+                        
+                        <div class="order-summary-details">
+                            <div class="summary-line">
+                                <span data-i18n="subtotal">Ապրանքների գումար</span>: 
+                                <span id="orderSubtotalPrice">0 ֏</span>
+                            </div>
+                            <div class="summary-line">
+                                <span data-i18n="serviceFee">Սպասարկում (10%)</span>: 
+                                <span id="orderServiceFee">0 ֏</span>
+                            </div>
+                        </div>
+
+                        <div class="order-total-bar">
+                            <span data-i18n="total">Ընդամենը</span>
+                            <span id="orderTotalPrice">0 ֏</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="order-panel-footer">
+                    <button class="action-footer-btn cancel-btn" id="cancelOrderBtn" data-i18n="invalidate">✕ Անվավեր</button>
+                    <button class="action-footer-btn bill-btn hidden" id="billBtn" data-i18n="bill">🧾 Հաշիվ</button>
+                    <button class="action-footer-btn accept-btn" id="acceptOrderBtn" data-i18n="accept">✓ Ընդունել</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="itemModal" class="modal-overlay hidden">
+        <div class="guests-modal">
+            <h3 style="margin-bottom: 15px; color: #fff;" id="modalItemTitle">Ուտեստի անվանում</h3>
+            <label style="color: #aaa; font-size: 13px; margin-bottom: 8px; width: 100%; text-align: left;" data-i18n="itemCommentLabel">Մեկնաբանություն ուտեստին․</label>
+            <input type="text" id="modalItemComment" placeholder="Օր.՝ առանց սոխ, կծու..." style="width: 100%; padding: 10px; margin-bottom: 15px; background: #111; border: 1px solid #444; color: #fff; border-radius: 6px; outline: none;">
+            
+            <div class="modal-actions">
+                <button id="saveCommentBtn" class="modal-btn" style="background-color: #2e7d32; color: #fff;" data-i18n="saveComment">Պահպանել</button>
+                <button id="cancelItemBtn" class="modal-btn cancel" data-i18n="cancel">Չեղարկել</button>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="order.js"></script>
+</body>
+</html>

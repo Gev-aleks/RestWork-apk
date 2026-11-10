@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="hy">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Level Up POS - Floor Plan</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="LevelUp">
+        <div class="header">
+            <div class="logo">
+                <img src="gemini-svg.svg" alt="Logo"> 
+                <span>Level Up</span>
+            </div>
+            <div class="header-right">
+                <div class="lang-selector">
+                    <button class="lang-btn" data-lang="hy">HY</button>
+                    <button class="lang-btn" data-lang="ru">RU</button>
+                    <button class="lang-btn" data-lang="en">EN</button>
+                </div>
+                <div class="system-info" id="clock">00:00:00</div>
+            </div>
+        </div>
+
+        <div class="screen" id="floorScreen">
+            <div class="floor-screen">
+                <div class="zone-bar">
+                    <button class="zone-btn active" data-zone="main" data-i18n="mainZone">Գլխավոր Սրահ</button>
+                    <button class="zone-btn" data-zone="vip" data-i18n="vipZone">VIP Սենյակներ</button>
+                    <button class="zone-btn" data-zone="balcony" data-i18n="balconyZone">Պատշգամբ</button>
+                </div>
+                
+                <div class="tables-grid" id="tablesGrid"></div>
+
+                <div class="floor-footer">
+                    <div id="activeWaiterInfo" style="font-weight: 500;">Մատուցող՝ -</div>
+                    <button class="logout-btn" id="logoutBtn" data-i18n="logout">Փակել էջը (Log Out)</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal-overlay hidden" id="guestsModal">
+            <div class="guests-modal">
+                <h3 style="margin-bottom: 15px; color: #fff;" id="modalTableName">Սեղան</h3>
+                <div class="guests-display" id="guestCountDisplay">0</div>
+                <div class="modal">
+                    <h2>Հյուրերի քանակ</h2>
+                    <div class="modal-keypad">
+                        <button class="key-btn guest-num" value="1">1</button>
+                        <button class="key-btn guest-num" value="2">2</button>
+                        <button class="key-btn guest-num" value="3">3</button>
+                        <button class="key-btn guest-num" value="4">4</button>
+                        <button class="key-btn guest-num" value="5">5</button>
+                        <button class="key-btn guest-num" value="6">6</button>
+                        <button class="key-btn guest-num" value="7">7</button>
+                        <button class="key-btn guest-num" value="8">8</button>
+                        <button class="key-btn guest-num" value="9">9</button>
+                        <button class="key-btn clear" id="guestClearBtn">C</button>
+                        <button class="key-btn guest-num" value="0">0</button>
+                        <button class="key-btn enter" id="guestConfirmBtn">✓</button>
+                    </div>
+                </div>
+                <div class="modal-actions">
+                    <button class="modal-btn cancel" id="guestCancelBtn" data-i18n="cancel">Չեղարկել</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="tables.js"></script>
+</body>
+</html>

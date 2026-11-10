@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="100%" height="100%">
+  <defs>
+    <!-- Նարնջագույն գրադիենտ (համապատասխանեցված HY կոճակի և գծի նարնջագույնին) -->
+    <linearGradient id="orangeGradient" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#d83a00" />
+      <stop offset="50%" stop-color="#ff4500" />
+      <stop offset="100%" stop-color="#ff6a00" />
+    </linearGradient>
+
+    <!-- Կարմիր գրադիենտ (C կոճակի կարմիրին համապատասխան) -->
+    <linearGradient id="redGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#e52d27" />
+      <stop offset="100%" stop-color="#b31217" />
+    </linearGradient>
+
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="5" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <!-- Լոգոյի Իկոնա -->
+  <g filter="url(#glow)">
+    <!-- Ներքևի շերտ (մուգ մոխրագույն/կարմիր) -->
+    <path d="M 160 280 L 250 330 L 340 280 L 250 230 Z" fill="url(#redGradient)" opacity="0.85" />
+    <!-- Մեջտեղի շերտ -->
+    <path d="M 160 230 L 250 280 L 340 230 L 250 180 Z" fill="url(#orangeGradient)" opacity="0.7" />
+    <!-- Վերևի սլաք -->
+    <path d="M 160 180 L 250 230 L 340 180 L 250 90 Z" fill="url(#orangeGradient)" />
+  </g>
+
+  <!-- Տեքստ LEVEL UP -->
+  <text x="250" y="390" 
+        font-family="'Segoe UI', Roboto, Helvetica, Arial, sans-serif" 
+        font-size="46" 
+        font-weight="900" 
+        fill="#ff4500" 
+        text-anchor="middle" 
+        letter-spacing="3">
+    Level Up
+  </text>
+  
+  <!-- Տեքստ POS SYSTEM -->
+  <text x="250" y="430" 
+        font-family="'Segoe UI', Roboto, Helvetica, Arial, sans-serif" 
+        font-size="18" 
+        font-weight="700" 
+        fill="#ffffff" 
+        opacity="0.9"
+        text-anchor="middle" 
+        letter-spacing="8">
+    POS SYSTEM
+  </text>
+</svg>
